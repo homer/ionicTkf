@@ -1,0 +1,10 @@
+<ion-view title="{{race.raceName}}">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="category in race.categories" type="item-text-wrap" ng-href="#/tab/races/{{raceId}}/{{category.id}}">
+        <h2>{{category.catName}}, {{category.sex}}</h2>
+        <p>{{category.rDate}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

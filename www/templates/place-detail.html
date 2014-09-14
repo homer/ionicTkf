@@ -2,5 +2,17 @@
   <ion-content has-header="true" padding="true">
     <h1>{{placeItem.name}}</h1>
     <h2>{{placeItem.city}}</h2>
+    <img ng-src="{{placeItem.image[0]}}"/>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequuntur culpa, doloribus exercitationem magni, molestiae molestias natus, quia recusandae reprehenderit sed vel voluptas voluptate? Ad amet delectus ipsam optio sit.
+    </p>
+    <ul>
+      <li>Koordinat Bilgisi: {{placeItem.coord.lat}},{{placeItem.coord.lng}}</li>
+      <li>Yukseklik Bilgisi: </li>
+      <li>Pist Sayisi: </li>
+      <li>Kayak Turu: </li>
+      <li>Sezonu: </li>
+    </ul>
+    <a class="button button-block button-positive icon-right ion-chevron-right">Pist Haritasini Goster</a>
   </ion-content>
 </ion-view>

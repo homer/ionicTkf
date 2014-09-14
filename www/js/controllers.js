@@ -20,5 +20,19 @@ angular.module('starter.controllers', [])
   $scope.placeItem = Places.get($stateParams.placeId);
 })
 
-.controller('RacesCtrl', function($scope) {
+.controller('RacesCtrl', function($scope, Races) {
+  $scope.races = Races.all();
+})
+
+.controller('RaceCategoriesCtrl', function($scope, $stateParams, Races) {
+  $scope.raceId = $stateParams.raceId;
+  $scope.race = Races.getRace($scope.raceId);
+})
+
+.controller('RaceCategoryListCtrl', function($scope, $stateParams, Races) {
+  $scope.raceId = $stateParams.raceId;
+  $scope.catId  = $stateParams.raceCatId;
+
+  $scope.race = Races.getRace($scope.raceId);
+  $scope.raceCatList = Races.getRaceCategory($scope.raceId,$scope.catId);
 });

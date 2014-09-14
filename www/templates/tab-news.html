@@ -1,5 +1,9 @@
 <ion-view title="Haberler">
-  <ion-content class="padding">
-    <h1>Haberler</h1>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="newsItem in news" type="item-text-wrap" href="#/tab/news/{{newsItem.id}}">
+        {{newsItem.title}}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

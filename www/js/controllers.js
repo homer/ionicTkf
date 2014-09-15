@@ -1,5 +1,21 @@
 angular.module('starter.controllers', [])
 
+.controller('AppCtrl', function($scope, $ionicModal){
+  $ionicModal.fromTemplateUrl('info.html',function(modal){
+    $scope.taskModal = modal;
+  },{
+    scope:$scope,
+    animation: 'slide-in-up'
+  });
+
+  $scope.newTask = function() {
+    $scope.taskModal.show();
+  };
+  $scope.closeNewTask = function(){
+    $scope.taskModal.hide();
+  }
+})
+
 .controller('NewsCtrl', function($scope, News) {
   $scope.news = News.all();
 })

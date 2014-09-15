@@ -23,7 +23,7 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
   </head>
-  <body ng-app="starter" animation="slide-left-right-ios7">
+  <body ng-app="starter" ng-controller="AppCtrl" animation="slide-left-right-ios7">
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
@@ -32,12 +32,44 @@
         Geri
       </ion-nav-back-button>
       <div class="buttons right-buttons">
-        <button class="button">
-          Info
-        </button>
+        <button class="button icon ion-information-circled" ng-click="newTask()"></button>
       </div>
     </ion-nav-bar>
 
     <ion-nav-view></ion-nav-view>
+
+    <script id="info.html" type="text/ng-template">
+      <div class="modal">
+        <!-- Modal header -->
+        <ion-header-bar class="bar-secondary">
+          <h1 class="title">TKF</h1>
+          <button class="button button-clear button-positive" ng-click="closeNewTask()">Kapat</button>
+        </ion-header-bar>
+        <!-- Modal content area -->
+        <ion-content class="padding">
+          <h3>Turkiye Kayak Federasyonu</h3>
+          <ul>
+            <li><b><i class="icon ion-home"></i> Adres:</b> Turkocagi cad. Nasuh Akar Mah. 1398. sok. No:4/9 ve 10<br/>Balgat - ANKARA</li>
+            <li><b><i class="icon ion-ios7-telephone"></i> Tel:</b> <a href="tel:+903125439988">0312 543 99 88</a></li>
+            <li><b><i class="icon ion-document-text"></i> Faks:</b> <a href="tel:+903125439977">0312 543 99 77</a></li>
+            <li><b><i class="icon ion-email"></i> Mail:</b> <a href="mailto:info@tkf.org.tr">info@tkf.org.tr</a></li>
+          </ul>
+          <button class="button block-button button-positive">
+            <i class="icon ion-earth"></i>
+            TKF Resmi Websitesi
+            <i class="icon ion-chevron-right"></i>
+          </button>
+          <h3>Sosyal Medya</h3>
+          <ul>
+            <li><i class="icon ion-social-facebook"></i></li>
+            <li><i class="icon ion-social-twitter"></i></li>
+            <li><i class="icon ion-social-instagram"></i></li>
+          </ul>
+          <h3>Harita</h3>
+          <img src="http://placehold.it/300x200"/>
+        </ion-content>
+      </div>
+    </script>
+
   </body>
 </html>

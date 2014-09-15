@@ -1,8 +1,9 @@
 <ion-view title="Haberler">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="newsItem in news" type="item-text-wrap" href="#/tab/news/{{newsItem.id}}">
+      <ion-item ng-repeat="newsItem in news" type="item item-icon-right" href="#/tab/news/{{newsItem.id}}">
         {{newsItem.title}}
+        <i class="icon ion-chevron-right"></i>
       </ion-item>
     </ion-list>
   </ion-content>

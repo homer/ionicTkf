@@ -21,11 +21,42 @@
       </li>
     </ul>
 
+
+    <style>
+      .list .item.item-accordion {
+        line-height: 38px;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: 0.09s all linear;
+      }
+      .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+      }
+      .list .item.item-accordion.ng-hide-add,
+      .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
+      }
+    </style>
+
     <h3>Yaris Sonuclari</h3>
+    <ion-list>
+      <div ng-repeat="champ in raceCatList.race">
+        <ion-item class="item-stable" ng-click="toggleRacer(champ.num)" ng-class="{active: isRacerShown(champ.num)}">
+          <i class="icon" ng-class="isRacerShown(champ.num) ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          {{champ.rank}} {{champ.fName}} {{champ.lName}} {{champ.point}}
+        </ion-item>
+        <ion-item class="item-accordion" ng-show="isRacerShown(champ.num)">
+          <p>Detail for racer # {{ champ.num }}</p>
+        </ion-item>
+      </div>
+    </ion-list>
+
     <ion-list>
       <ion-item ng-repeat="champ in raceCatList.race">
         {{champ.rank}} {{champ.fName}} {{champ.lName}} {{champ.point}}
       </ion-item>
     </ion-list>
+
   </ion-content>
 </ion-view>

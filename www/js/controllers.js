@@ -55,4 +55,15 @@ angular.module('starter.controllers', [])
 
   $scope.race = Races.getRace($scope.raceId);
   $scope.raceCatList = Races.getRaceCategory($scope.raceId,$scope.catId);
+
+  $scope.toggleRacer = function(racerNum) {
+    if ($scope.isRacerShown(racerNum)) {
+      $scope.shownRacerNum = null;
+    } else {
+      $scope.shownRacerNum = racerNum;
+    }
+  };
+  $scope.isRacerShown = function(racerNum) {
+    return $scope.shownRacerNum === racerNum;
+  };
 });

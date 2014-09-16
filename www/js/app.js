@@ -80,6 +80,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       })
 
+      .state('tab.place-detail-map', {
+        url: '/places/:placeId/map',
+        views: {
+          'tab-places': {
+            templateUrl: 'templates/place-detail-map.html',
+            controller: 'PlaceDetailMapCtrl'
+          }
+        }
+      })
+
       .state('tab.races', {
         url: '/races',
         views: {

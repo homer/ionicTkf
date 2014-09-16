@@ -36,6 +36,10 @@ angular.module('starter.controllers', [])
   $scope.placeItem = Places.get($stateParams.placeId);
 })
 
+.controller('PlaceDetailMapCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('RacesCtrl', function($scope, Races) {
   $scope.races = Races.all();
 })
